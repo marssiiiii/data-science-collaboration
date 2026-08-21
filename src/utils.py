@@ -24,6 +24,9 @@ logger = logging.getLogger(__name__)
 # Suppress warnings for cleaner output
 warnings.filterwarnings('ignore')
 
+def calculate_statistics(data):
+    return {'mean': data.mean(),'std': data.std(),'count': len(data)}
+
 
 def setup_plotting_style():
     """
