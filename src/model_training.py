@@ -36,6 +36,18 @@ class ModelTrainer:
         self.models = {}
         self.best_model = None
         self.model_scores = {}
+
+    from sklearn.ensemble import RandomForestClassifier
+    def train_model(X_train, y_train):
+        """Train a machine learning model."""
+        # Use Random Forest with specific parameters
+        model = RandomForestClassifier(
+        n_estimators=100,
+        max_depth=10,
+        random_state=42
+        )
+        model.fit(X_train, y_train)
+        return model
         
     def prepare_data(self, data_path: str, target_column: str, test_size: float = 0.2) -> Tuple:
         """
