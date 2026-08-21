@@ -36,6 +36,19 @@ class ModelTrainer:
         self.models = {}
         self.best_model = None
         self.model_scores = {}
+
+    from sklearn.ensemble import GradientBoostingClassifier
+    def train_model(X_train, y_train):
+        """Train a machine learning model."""
+        # Use Gradient Boosting for better performance
+        model = GradientBoostingClassifier(
+        n_estimators=200,
+        learning_rate=0.1,
+        max_depth=5,
+        random_state=42
+        )
+        model.fit(X_train, y_train)
+        return model
         
     def prepare_data(self, data_path: str, target_column: str, test_size: float = 0.2) -> Tuple:
         """
