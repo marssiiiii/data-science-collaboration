@@ -48,7 +48,7 @@ class ModelTrainer:
         )
         model.fit(X_train, y_train)
         return model
-        
+    
     def prepare_data(self, data_path: str, target_column: str, test_size: float = 0.2) -> Tuple:
         """
         Load and prepare data for training.
